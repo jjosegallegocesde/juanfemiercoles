@@ -42,7 +42,13 @@ boton.addEventListener("click",function(evento){
             fecha:valorFecha
         }
 
-        console.log(datos)
+       let reservas=[]
+       let reserva=datos
+
+       //almacenando datos en memoria
+       reservas.push(reserva)
+       localStorage.setItem("memoria",JSON.stringify(reservas))
+
 
         Swal.fire(
             'Good job!',
