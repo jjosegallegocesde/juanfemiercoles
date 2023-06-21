@@ -42,14 +42,18 @@ boton.addEventListener("click",function(evento){
             fecha:valorFecha
         }
 
-       let reservas=[]
-       let reserva=datos
+       let reservas
+       if(JSON.parse(localStorage.getItem("memoria"))){
+        reservas=JSON.parse(localStorage.getItem("memoria"))
+       }else{
+        reservas=[]
+       }
+       
 
        //almacenando datos en memoria
+       let reserva=datos
        reservas.push(reserva)
        localStorage.setItem("memoria",JSON.stringify(reservas))
-
-
         Swal.fire(
             'Good job!',
             'You clicked the button!',
